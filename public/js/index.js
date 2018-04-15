@@ -19,7 +19,7 @@ const httpGET = (callback, url) => {
 const addToChart = (chart, data) => {
     chart.data.datasets[0].data.push(data);
     curLabel++;
-    chart.data.labels[curLabel] = curLabel * 30 + " sec";
+    chart.data.labels[curLabel] = curLabel + " min";
     chart.update();
 }
 
@@ -31,9 +31,9 @@ const update = () => {
 }
 
 
-// every 30 seconds add this to the list of heap information
+// every minute add this to the list of heap information
 update();
-setInterval(update, 30000);
+setInterval(update, 60000);
 
 var chart = new Chart(ctx, {
     type: 'line',
