@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/omnifiedtechnologies/lyzer/issues"
   },
-  "homepage": "https://github.com/omnifiedtechnologies/lyzer#readme"
+  "homepage": "https://github.com/omnifiedtechnologies/lyzer#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3"
+  }
 }

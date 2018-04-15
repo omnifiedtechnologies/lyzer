@@ -1,0 +1,15 @@
+
+body{
+    font-family: Segoe UI,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+}
+
+header{
+    font-size: 3vmax;
+    letter-spacing: .3vw;
+}
+
+/*the central chart*/
+#mainChart{
+    width: 45vw;
+    height: 30vw;
+}
