@@ -1,0 +1,23 @@
+{
+  "name": "lyzer",
+  "version": "1.0.0",
+  "description": "The internal metrics module used by Omnified Technologies",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omnifiedtechnologies/lyzer.git"
+  },
+  "author": "Avuxo @ omnifiedtech",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omnifiedtechnologies/lyzer/issues"
+  },
+  "homepage": "https://github.com/omnifiedtechnologies/lyzer#readme"
+}
