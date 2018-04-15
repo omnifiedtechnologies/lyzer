@@ -8,8 +8,7 @@ header{
     letter-spacing: .3vw;
 }
 
-/*the central chart*/
-#mainChart{
-    width: 45vw;
-    height: 30vw;
+.chartContainer{
+    width: 65vw;
+    height: 45vw;
 }
