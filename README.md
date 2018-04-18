@@ -1,6 +1,8 @@
 # Lyzer
 Node.js metrics analytics module with an Express front-end.
 
+![Lyzer Screenshot](/lyzer.png)
+
 ## Setup
 
 First, install the module with `$ npm i lyzer`.
