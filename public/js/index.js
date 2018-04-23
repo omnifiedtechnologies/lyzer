@@ -33,7 +33,7 @@ const update = () => {
 
 // every minute add this to the list of heap information
 update();
-setInterval(update, 60000);
+setInterval(update, 1000);
 
 var chart = new Chart(ctx, {
     type: 'line',
