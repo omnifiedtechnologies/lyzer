@@ -1,8 +1,12 @@
 /*pointer to the canvas*/
-var ctx = document.getElementById("mainChart");
+var memCtx = document.getElementById("memChart");
+var cpuCtx = document.getElementById("cpuChart");
 
-var infos = [];
-var curLabel = 0;
+var memUsed = [];
+var curMemLabel = 0;
+
+var cpuUsed = [];
+var curCpuLabel = 0;
 
 // HTTP get request
 const httpGET = (callback, url) => {
@@ -16,26 +20,34 @@ const httpGET = (callback, url) => {
     http.send(null);
 };
 
-const addToChart = (chart, data) => {
+const addToChart = (chart, data, curLabel) => {
     chart.data.datasets[0].data.push(data);
-    curLabel++;
     chart.data.labels[curLabel] = curLabel + " min";
     chart.update();
 }
 
 const update = () => {
+    // cpu
     httpGET((res) => {
         let y = JSON.parse(res).used;
-        addToChart(chart, y);
+        addToChart(memChart, y, curCpuLabel);
+        curCpuLabel++;
     }, '/getHeapInfo');
+
+    // memory
+    httpGET((res) => {
+        let y = JSON.parse(res).cpu.toFixed(2) * 100;
+        addToChart(cpuChart, y, curMemLabel);
+        curMemLabel++;
+    }, '/getCpuInfo')
 }
 
 
 // every minute add this to the list of heap information
 update();
-setInterval(update, 1000);
+setInterval(update, 60000);
 
-var chart = new Chart(ctx, {
+var memChart = new Chart(memCtx, {
     type: 'line',
     responsive: true,
     maintainAspectRatio: false,
@@ -44,7 +56,22 @@ var chart = new Chart(ctx, {
         datasets: [
             {
                 label: 'Heap usage (mb)',
-                data: infos
+                data: memUsed
+            }
+        ]
+    }
+});
+
+var cpuChart = new Chart(cpuCtx, {
+    type: 'line',
+    responsive: true,
+    maintainAspectRatio: false,
+    data: {
+        labels: [],
+        datasets: [
+            {
+                label: 'CPU usage (%)',
+                data: cpuUsed
             }
         ]
     }
