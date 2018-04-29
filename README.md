@@ -3,7 +3,9 @@ NodeJS metrics analytics module with an Express front-end.
 
 ![Lyzer Screenshot](/lyzer.png)
 
-Lyzer is a simple metrics tool to monitor NodJS processes. It will create HTML5 charts that will update live with usage.
+Lyzer is a simple metrics tool to monitor NodeJS processes. It will create HTML5 charts that will update live with usage.
+
+Lyzer monitors Heap memory usage and CPU usage. The purpose of this is to watch for garbage collection patterns.
 
 ## Setup
 
